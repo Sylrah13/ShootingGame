@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class missilemove : MonoBehaviour
+public class emissilemove : MonoBehaviour
 {
     public float moveSpeed = 0.0f;
-    
     void Start()
     {
-        
+
     }
 
     void Update()
