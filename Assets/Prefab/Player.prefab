@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 196026679280444954}
   - component: {fileID: 6628858763134398946}
   - component: {fileID: 2159326742224165062}
+  - component: {fileID: 6421799425807728435}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -153,6 +154,19 @@ MonoBehaviour:
   moveSpeed: 0
   moveRL: 0
   moveFB: 0
+--- !u!114 &6421799425807728435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651528796907440251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df48526f17d49d4dbd2c9bb99194f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
 --- !u!1 &8697473167520237283
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,3 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMissile: {fileID: 1004210596198247314, guid: 5f9f27d8210ca7f4299361f517ffe9ea, type: 3}
+  timeCheck: 0
+  timeDelay: 0
+  missileCount: 0
+  timerONOFF: 0

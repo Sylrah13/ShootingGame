@@ -12,7 +12,7 @@ public class emissilespawner : MonoBehaviour
     void Update()
     {
         timeCheck = timeCheck + Time.deltaTime;
-        if(timeCheck >= 4.0f)
+        if(timeCheck >= 2.0f)
         {
             Instantiate(emissile, transform.position, transform.rotation);
             timeCheck = 0.0f;
