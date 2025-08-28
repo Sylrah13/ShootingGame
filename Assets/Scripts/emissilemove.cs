@@ -3,14 +3,17 @@ using UnityEngine;
 public class emissilemove : MonoBehaviour
 {
     public float moveSpeed = 0.0f;
+
+    public Vector3 targetPlayer = Vector3.zero;
     void Start()
     {
-
+        targetPlayer = GameObject.Find("Player").transform.position;
+        transform.LookAt(targetPlayer);
     }
 
     void Update()
     {
-        transform.Translate(Vector3.up * moveSpeed * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.Self);
     }
     private void OnTriggerEnter(Collider other)
     {

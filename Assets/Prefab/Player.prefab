@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6421799425807728435}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,6 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  shakeTime: 0
+  ramdomPosX: 0
+  ramdomPosZ: 0
+  shakeONOFF: 0
 --- !u!1 &8697473167520237283
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +182,7 @@ GameObject:
   - component: {fileID: 5142445911921935566}
   - component: {fileID: 5015977186128821474}
   - component: {fileID: 7369711859930670033}
-  - component: {fileID: 7893001578114440423}
+  - component: {fileID: 8711719313931920186}
   m_Layer: 0
   m_Name: MissileSpawner
   m_TagString: Untagged
@@ -254,7 +258,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7893001578114440423
+--- !u!114 &8711719313931920186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,11 +267,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8697473167520237283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d86fb301f565e4d9ce5b84c9a6dcd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 745bea1243e7eb74ea96c46848d62f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMissile: {fileID: 1004210596198247314, guid: 5f9f27d8210ca7f4299361f517ffe9ea, type: 3}
-  timeCheck: 0
-  timeDelay: 0
-  missileCount: 0
-  timerONOFF: 0
+  missilePrefabs: []
+  firePoint: {fileID: 0}
+  fireRate: 0.25
