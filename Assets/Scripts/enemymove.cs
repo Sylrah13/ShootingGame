@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class enemymove : MonoBehaviour
 {
-    //public Vector3 targetPOS = Vector3.zero;
-
     public float moveSpeed = 0.0f;
     public Vector3 targetPos = Vector3.zero;
 
@@ -14,22 +12,14 @@ public class enemymove : MonoBehaviour
     public float rndZ = 0.0f;
     void Start()
     {
-        //targetPOS = new Vector3(-40.0f, 0.0f, 90.0f);
-        //moveSpeed = 10.0f;
-        {
-            RandomPOS();
-        }
+        RandomPOS();
     }
-
     void Update()
     {
-        //transform.position = Vector3.MoveTowards(이동물체의 좌표, 도착좌표, 이동속도);
-        //transform.position = Vector3.MoveTowards(transform.position, targetPOS, moveSpeed * Time.deltaTime);
-        //transform.LookAt(targetPOS);
-
         //targetPos = GameObject.Find("TargetSphere").transform.position;
         transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         transform.LookAt(targetPos);
+        if(transform.position == targetPos)
         {
             RandomPOS();
         }

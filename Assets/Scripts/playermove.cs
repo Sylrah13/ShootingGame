@@ -7,6 +7,8 @@ public class playermove : MonoBehaviour
     public float moveSpeed = 0.0f; //이동값을 담는 변수
     public float moveRL = 0.0f; // Input.GetAxis("Horizontal");값을 담을 변수
     public float moveFB = 0.0f; // Input.GetAxis("Vertical"); 값을 담을 변수
+
+    public GameObject missileSpawner = null;
     void Start()
     {
         
@@ -30,5 +32,15 @@ public class playermove : MonoBehaviour
     void Limitmove() //화면 밖으로 못 나가게
     {
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "Item")
+        {
+            //변수 = 변수 + 증가값;
+            //missileSpawner.GetComponent<missilepower>().missilePower = missileSpawner.GetComponent<missilepower>().missilePower + 1;
+            missileSpawner.GetComponent<missilepower>().missilePower += 1;
+            Debug.Log("아이템 충돌");
+        }
     }
 }

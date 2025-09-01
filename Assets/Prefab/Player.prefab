@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6421799425807728435}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2159326742224165062
 MonoBehaviour:
@@ -154,6 +154,7 @@ MonoBehaviour:
   moveSpeed: 0
   moveRL: 0
   moveFB: 0
+  missileSpawner: {fileID: 8697473167520237283}
 --- !u!114 &6421799425807728435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +183,7 @@ GameObject:
   - component: {fileID: 5142445911921935566}
   - component: {fileID: 5015977186128821474}
   - component: {fileID: 7369711859930670033}
-  - component: {fileID: 8711719313931920186}
+  - component: {fileID: 8971196670373923415}
   m_Layer: 0
   m_Name: MissileSpawner
   m_TagString: Untagged
@@ -198,13 +199,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8697473167520237283}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2257086517424605601}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5015977186128821474
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -258,7 +259,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8711719313931920186
+--- !u!114 &8971196670373923415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,9 +268,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8697473167520237283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745bea1243e7eb74ea96c46848d62f24, type: 3}
+  m_Script: {fileID: 11500000, guid: 99212dfa570ca9847b99963ce96a8c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missilePrefabs: []
-  firePoint: {fileID: 0}
-  fireRate: 0.25
+  missile1: {fileID: 3145519445003533351, guid: 6b213c1ff323cdd46b67a4d68af9b11c, type: 3}
+  missile2: {fileID: 3145519445003533351, guid: 7eed16ea0e87d554ab0fb07a5b5f5ee6, type: 3}
+  missile3: {fileID: 3145519445003533351, guid: 143f360031dcfc849ba25f8aaeabd2fd, type: 3}
+  missile4: {fileID: 3145519445003533351, guid: 8558668b7300e9643adff9204f669844, type: 3}
+  missilePower: 0

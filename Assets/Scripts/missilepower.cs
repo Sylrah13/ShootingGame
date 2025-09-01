@@ -1,65 +1,38 @@
 using UnityEngine;
 
-public class MissilePower : MonoBehaviour
+public class missilepower : MonoBehaviour
 {
-    [Header("미사일 단계별 프리팹 (1~4)")]
-    public GameObject[] missilePrefabs;  // 0=1단계, 1=2단계, 2=3단계, 3=4단계
+    public GameObject missile1 = null;
+    public GameObject missile2 = null;
+    public GameObject missile3 = null;
+    public GameObject missile4 = null;
 
-    [Header("발사 위치")]
-    public Transform firePoint;
-
-    [Header("발사 속도")]
-    public float fireRate = 0.25f;
-
-    private int powerLevel = 0; // 현재 미사일 단계 (0~3)
-    private float lastFireTime;
+    public int missilePower = 0;
+    void Start()
+    {
+        
+    }
 
     void Update()
     {
-        // 스페이스바 발사
-        if (Input.GetKey(KeyCode.Space) && Time.time > lastFireTime + fireRate)
+        if(Input.GetKey(KeyCode.Space))
         {
-            FireMissile();
-            lastFireTime = Time.time;
+            if (missilePower == 0)
+            {
+                Instantiate(missile1, transform.position, transform.rotation);
+            }
+            else if (missilePower == 1)
+            {
+                Instantiate(missile2, transform.position, transform.rotation);
+            }
+            else if (missilePower == 2)
+            {
+                Instantiate(missile3, transform.position, transform.rotation);
+            }
+            else if (missilePower == 3)
+            {
+                Instantiate(missile4, transform.position, transform.rotation);
+            }
         }
     }
-
-    void FireMissile()
-    {
-        GameObject prefab = missilePrefabs[powerLevel];
-
-        switch (powerLevel)
-        {
-            case 0: // 1발
-                Instantiate(prefab, firePoint.position, firePoint.rotation);
-                break;
-
-            case 1: // 2발
-                Instantiate(prefab, firePoint.position + transform.right * -0.3f, firePoint.rotation);
-                Instantiate(prefab, firePoint.position + transform.right * 0.3f, firePoint.rotation);
-                break;
-
-            case 2: // 4발 직선
-                Instantiate(prefab, firePoint.position + transform.right * -0.4f, firePoint.rotation);
-                Instantiate(prefab, firePoint.position + transform.right * -0.2f, firePoint.rotation);
-                Instantiate(prefab, firePoint.position + transform.right * 0.2f, firePoint.rotation);
-                Instantiate(prefab, firePoint.position + transform.right * 0.4f, firePoint.rotation);
-                break;
-
-            case 3: // 4발 부채꼴
-                Instantiate(prefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, -15f, 0));
-                Instantiate(prefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, -5f, 0));
-                Instantiate(prefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 5f, 0));
-                Instantiate(prefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 15f, 0));
-                break;
-        }
-    }
-
-    public void PowerUp()
-    {
-        // 배열 범위 안에서만 증가
-        powerLevel = Mathf.Min(powerLevel + 1, missilePrefabs.Length - 1);
-        Debug.Log("미사일 파워업! 현재 단계: " + (powerLevel + 1));
-    }
-
 }
